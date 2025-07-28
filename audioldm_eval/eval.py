@@ -413,6 +413,7 @@ class EvaluationHelper:
 
                 ipdb.set_trace()
                 print("Classifier Inference error: ", e)
+                raise RuntimeError(f"Classfier Inference Error: {e}")
                 continue
 
         out = {k: torch.cat(v, dim=0) for k, v in out.items()}
